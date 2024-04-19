@@ -39,7 +39,6 @@ export default function Experience() {
       const center = box.getCenter(new THREE.Vector3());
       const size = box.getSize(new THREE.Vector3());
 
-      // Move the camera to frame the loaded model appropriately
       camera.position.set(
         center.x - 1,
         center.y + size.y * -Math.PI * 0.5,
@@ -136,7 +135,6 @@ export default function Experience() {
     useFrame(() => {
       selectedMeshes.forEach((mesh) => {
         if (isAnimating) {
-          // Assuming rotation around Z-axis; adjust as needed
           mesh.rotation.z += rotationSpeed;
           mesh.updateMatrix();
           setMeshRotation({ ...meshRotation });
